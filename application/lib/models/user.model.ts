@@ -19,7 +19,7 @@ const userSchema = new mongoose.Schema(
     },
     communities: [
       {
-        type: mongoose.Schema.ObjectId,
+        type: mongoose.Schema.Types.ObjectId,
         ref: "Community",
       },
     ],
