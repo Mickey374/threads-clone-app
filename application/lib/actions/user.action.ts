@@ -136,3 +136,32 @@ export async function fetchUsers({
     throw new Error(`Error fetching Users: ${error.message}`);
   }
 }
+
+// Function to Notify user if someone comments
+export async function getActivity(userId: string) {
+  try {
+    connectToDB();
+
+    //Find all threads by the User
+    const userThreads = await Thread.find({ author: userId });
+
+    //Collect all Child thread ids (replies) from children field
+    const childThreadIds = userThreads.reduce((acc, userThread) => {
+      return acc.concat(userThread.children);
+    }, []);
+
+    //Find all replies excluding the ones created by User
+    const replies = await Thread.find({
+      _id: { $in: childThreadIds },
+      author: { $ne: userId },
+    }).populate({
+      path: "author",
+      model: User,
+      select: "name image _id",
+    });
+
+    return replies;
+  } catch (error: any) {
+    throw new Error(`Failed to fetch User Activity: ${error.message}`);
+  }
+}

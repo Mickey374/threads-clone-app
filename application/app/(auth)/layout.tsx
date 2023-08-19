@@ -18,7 +18,16 @@ export default function RootLayout({
     <ClerkProvider>
       <html lang="en">
         <body className={`${inter.className} bg-dark-1`}>
+          <div 
+          className="w-full flex justify-center items-center min-h-screen"
+          style={{
+            backgroundImage: "url('https://images.unsplash.com/photo-1688728380093-d9e2a6df2c5c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1184&q=80')",
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+          }}
+          >
             {children}
+          </div>
         </body>
       </html>
     </ClerkProvider>
