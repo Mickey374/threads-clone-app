@@ -15,7 +15,7 @@ async function Page() {
     <>
       <h1 className="head-text">Create Thread</h1>
 
-      <PostThread userId={userInfo._id}></PostThread>
+      <PostThread userId={userInfo._id} />
     </>
   );
 }
