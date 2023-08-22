@@ -34,10 +34,10 @@ interface Props {
   btnTitle: string;
 }
 const AccountProfile = ({ user, btnTitle }: Props) => {
+  const router = useRouter();
+  const pathname = usePathname();
   const { startUpload } = useUploadThing("media");
   const [files, setFiles] = useState<File[]>([]);
-  const pathname = usePathname();
-  const router = useRouter();
 
   const form = useForm<z.infer<typeof userValidation>>({
     resolver: zodResolver(userValidation),
@@ -50,7 +50,7 @@ const AccountProfile = ({ user, btnTitle }: Props) => {
   });
 
   const onSubmit = async (values: z.infer<typeof userValidation>) => {
-    const blob = values?.profile_photo;
+    const blob = values.profile_photo;
 
     const hasImgChanged = isBase64Image(blob);
     if (hasImgChanged) {
@@ -140,7 +140,6 @@ const AccountProfile = ({ user, btnTitle }: Props) => {
                   onChange={(e) => handleImage(e, field.onChange)}
                 />
               </FormControl>
-              <FormMessage />
             </FormItem>
           )}
         />
