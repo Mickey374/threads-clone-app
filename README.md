@@ -36,7 +36,7 @@ Follow these steps to run the Threads Clone application on your local machine:
 
 1. Clone the repository using the following command:
    ```
-   git clone https://github.com/your-username/threads-clone.git
+   git clone https://github.com/Mickey374/threads-clone.git
    ```
 
 2. Navigate to the project directory:
