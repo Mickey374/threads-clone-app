@@ -1,6 +1,6 @@
 🚀 Full Stack Threads Clone App 🧵
 
-![Threads Clone App](![image](![image](https://github.com/Mickey374/threads-clone-app/assets/41800926/24c980b6-6366-40ba-8af9-c5e89d96ef3a))
+![Threads Clone App](![image](![image](https://pbs.twimg.com/media/F4k5UItXcAAsmYA?format=jpg&name=large)
 
 Welcome to the Full Stack Threads Clone repository! This project aims to provide a comprehensive example of a modern web application built using Next.js 13.4 with Server-Side Rendering, MongoDB for the database, TypeScript for type safety, Tailwind CSS for stunning layouts, and Clerk for secure authentication. With this app, you'll learn how to create an engaging social platform where users can post threads, share ideas, and interact with each other.
 
